@@ -1,12 +1,13 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-29T02:10:47.659Z
-> Files: 516 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-29T02:40:12.990Z
+> Files: 523 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.gitignore` — Git ignore rules (~103 tok)
 - `CLAUDE.md` — xwaste (~552 tok)
+- `README.md` — Project documentation (~774 tok)
 
 ## .claude/
 
@@ -48,6 +49,10 @@
 ## .claude/skills/openspec-update-change/
 
 - `SKILL.md` — /*.md`). Do NOT write to `resolvedOutputPath`: for a glob artifact it is still the glob pattern, not a real file. (~1448 tok)
+
+## .github/
+
+- `CODEOWNERS` — Default owner for everything in the repo. (~16 tok)
 
 ## build_output/
 
@@ -620,6 +625,20 @@
 - `ShoppingListView.o` (~107272 tok)
 - `ShoppingListView.stringsdata` (~297 tok)
 - `supplementaryOutputs-1` (~455 tok)
+
+## openspec/changes/add-watchos-macos/
+
+- `design.md` — Context (~2303 tok)
+- `proposal.md` — Why (~1064 tok)
+- `tasks.md` — 1. Watch target — project surgery (~1943 tok)
+
+## openspec/changes/add-watchos-macos/specs/mac-experience/
+
+- `spec.md` — ADDED Requirements (~865 tok)
+
+## openspec/changes/add-watchos-macos/specs/watch-app/
+
+- `spec.md` — ADDED Requirements (~1232 tok)
 
 ## openspec/changes/archive/2026-07-28-add-grocery-inventory/
 
