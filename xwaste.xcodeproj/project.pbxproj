@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* nomorewaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nomorewaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* xwaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xwaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		000000000000000000000011 /* Exceptions for "xwaste" folder in "xwaste" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 000000000000000100000000 /* xwaste */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		000000000000000000000010 /* nomorewaste */ = {
+		000000000000000000000010 /* xwaste */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nomorewaste;
+			exceptions = (
+				000000000000000000000011 /* Exceptions for "xwaste" folder in "xwaste" target */,
+			);
+			path = xwaste;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +43,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000010 /* nomorewaste */,
+				000000000000000000000010 /* xwaste */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,7 +51,7 @@
 		000000000000000000000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000120 /* nomorewaste.app */,
+				000000000000000000000120 /* xwaste.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,9 +59,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		000000000000000100000000 /* nomorewaste */ = {
+		000000000000000100000000 /* xwaste */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "nomorewaste" */;
+			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "xwaste" */;
 			buildPhases = (
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
@@ -57,11 +70,11 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				000000000000000000000010 /* nomorewaste */,
+				000000000000000000000010 /* xwaste */,
 			);
-			name = nomorewaste;
-			productName = MyApp;
-			productReference = 000000000000000000000120 /* nomorewaste.app */;
+			name = xwaste;
+			productName = xwaste;
+			productReference = 000000000000000000000120 /* xwaste.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +92,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "nomorewaste" */;
+			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "xwaste" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +106,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000000000000000100000000 /* nomorewaste */,
+				000000000000000100000000 /* xwaste */,
 			);
 		};
 /* End PBXProject section */
@@ -115,7 +128,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		000000000000000011000000 /* Debug configuration for PBXProject "nomorewaste" */ = {
+		000000000000000011000000 /* Debug configuration for PBXProject "xwaste" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -170,7 +183,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -185,7 +198,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000012000000 /* Release configuration for PBXProject "nomorewaste" */ = {
+		000000000000000012000000 /* Release configuration for PBXProject "xwaste" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -247,15 +260,20 @@
 			};
 			name = Release;
 		};
-		000000000000000111000000 /* Debug configuration for PBXNativeTarget "nomorewaste" */ = {
+		000000000000000111000000 /* Debug configuration for PBXNativeTarget "xwaste" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xwaste/xwaste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8L779MGGP;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = xwaste;
+				INFOPLIST_FILE = xwaste/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -269,7 +287,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devplaceholder.$(PROJECT_UNIQUE_VALUE:identifier).$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yixinxiao.nomorewaste;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -284,15 +302,20 @@
 			};
 			name = Debug;
 		};
-		000000000000000112000000 /* Release configuration for PBXNativeTarget "nomorewaste" */ = {
+		000000000000000112000000 /* Release configuration for PBXNativeTarget "xwaste" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xwaste/xwaste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8L779MGGP;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = xwaste;
+				INFOPLIST_FILE = xwaste/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -306,7 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devplaceholder.$(PROJECT_UNIQUE_VALUE:identifier).$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yixinxiao.nomorewaste;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -324,19 +347,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		000000000000000010000000 /* Build configuration list for PBXProject "nomorewaste" */ = {
+		000000000000000010000000 /* Build configuration list for PBXProject "xwaste" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000011000000 /* Debug configuration for PBXProject "nomorewaste" */,
-				000000000000000012000000 /* Release configuration for PBXProject "nomorewaste" */,
+				000000000000000011000000 /* Debug configuration for PBXProject "xwaste" */,
+				000000000000000012000000 /* Release configuration for PBXProject "xwaste" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		000000000000000110000000 /* Build configuration list for PBXNativeTarget "nomorewaste" */ = {
+		000000000000000110000000 /* Build configuration list for PBXNativeTarget "xwaste" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000111000000 /* Debug configuration for PBXNativeTarget "nomorewaste" */,
-				000000000000000112000000 /* Release configuration for PBXNativeTarget "nomorewaste" */,
+				000000000000000111000000 /* Debug configuration for PBXNativeTarget "xwaste" */,
+				000000000000000112000000 /* Release configuration for PBXNativeTarget "xwaste" */,
 			);
 			defaultConfigurationName = Release;
 		};
