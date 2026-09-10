@@ -25,6 +25,12 @@ struct CategorySection: Identifiable {
 /// Shared row: name, quantity, and an inline stepper that adjusts in place
 /// without navigation. The optional check-off control only appears on the
 /// shopping list.
+///
+/// Not built for watchOS: `Stepper` does not exist there, and a row-embedded
+/// tap target would fight the watch's whole-row check-off tap. The watch has
+/// its own row and a separate quantity screen; this file joins the watch target
+/// only for `CategorySection.sections(from:)`.
+#if !os(watchOS)
 struct ItemRowView: View {
     @ObservedObject var item: GroceryItem
     var onCheckOff: (() -> Void)?
@@ -54,6 +60,7 @@ struct ItemRowView: View {
         }
     }
 }
+#endif
 
 struct EmptyStateView: View {
     let systemImage: String

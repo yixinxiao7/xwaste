@@ -1,13 +1,13 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-29T02:40:12.990Z
-> Files: 523 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-05T16:38:41.954Z
+> Files: 539 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.gitignore` — Git ignore rules (~103 tok)
-- `CLAUDE.md` — xwaste (~552 tok)
-- `README.md` — Project documentation (~774 tok)
+- `CLAUDE.md` — xwaste (~948 tok)
+- `README.md` — Project documentation (~966 tok)
 
 ## .claude/
 
@@ -628,9 +628,9 @@
 
 ## openspec/changes/add-watchos-macos/
 
-- `design.md` — Context (~2303 tok)
-- `proposal.md` — Why (~1064 tok)
-- `tasks.md` — 1. Watch target — project surgery (~1943 tok)
+- `design.md` — Context (~2890 tok)
+- `proposal.md` — Why (~1166 tok)
+- `tasks.md` — 1. Watch target — project surgery (~3375 tok)
 
 ## openspec/changes/add-watchos-macos/specs/mac-experience/
 
@@ -653,7 +653,42 @@
 - `item-categorization/spec.md` — static keyword-table categorization, fixed category order, matching rules, manual override; 7 requirements (~1700 tok)
 - `shopping-list/spec.md` — default screen, sections, add/merge/edit, check-off to inventory, undo semantics; 10 requirements (~2100 tok)
 
+## xwaste-watch/
+
+- `WatchAccountMonitor.swift` — / Whether the watch can show the household's data at all, and — when it can (~1096 tok)
+- `WatchConfirmationView.swift` — / What the phone shows as a bottom banner. On a 40 mm screen an overlay banner (~424 tok)
+- `WatchListView.swift` — / One page of the watch app. Both pages share this body: the same (~2101 tok)
+- `WatchQuantityView.swift` — / watchOS has no `Stepper`, and cramming tap targets into rows invites (~629 tok)
+- `WatchRootView.swift` — / Two vertical pages, list first — the phone's two destinations without any (~612 tok)
+- `Assets.xcassets/AppIcon.appiconset` — watchOS app icon (single 1024x1024, platform 'watchos'). REQUIRED: without it watchOS refuses to install on a physical watch ("This app could not be installed at this time"), though simulators build and run fine.
+- `xwaste-watch.entitlements` — iCloud container + CloudKit + aps-environment for the watch target.
+- `XWasteWatchApp.swift` — Struct: XWasteWatchApp (~96 tok)
+
+## xwaste-watchUITests/
+
+- `XWasteWatchUITests.swift` — / Smoke-level XCUITest over the watch app. It exists because nothing else can (~2804 tok)
+
+## xwaste.xcodeproj/
+
+- `project.pbxproj` — !$*UTF8*$! (~5596 tok)
+
+## xwaste.xcodeproj/xcshareddata/xcschemes/
+
+- `xwaste-watch.xcscheme` (~904 tok)
+- `xwaste.xcscheme` (~1031 tok)
+
 ## xwaste/
 
-- `PersistenceController.swift` — / Wraps `NSPersistentCloudKitContainer` — the CloudKit-capable container type — (~2797 tok)
-- `XWasteApp.swift` — if os(iOS) (~785 tok)
+- `CategorySection.swift` — / One category's slice of a fetch. Both screens build their sections through (~802 tok)
+- `HomeInventoryView.swift` — SwiftUI view: HomeInventoryView (~1360 tok)
+- `LaunchSupport.swift` — / Launch-time seams the UI-test suites drive, shared by the iOS and watch (~681 tok)
+- `PersistenceController.swift` — / Wraps `NSPersistentCloudKitContainer` — the CloudKit-capable container type — (~3026 tok)
+- `ShoppingListView.swift` — SwiftUI view: ShoppingListView (~1974 tok)
+- `XWasteApp.swift` — if os(iOS) (~895 tok)
+
+## xwasteTests/
+
+
+## xwasteUITests/
+
+- `XWasteRegressionUITests.swift` — / The iOS half of task 7.5: a one-time regression check that group 6's (~1814 tok)

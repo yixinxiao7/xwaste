@@ -8,6 +8,7 @@ Known constraints, from the codebase and prior sessions:
 - **CloudKit container, bundle ID, and store filenames are fixed** (`iCloud.com.yixinxiao.nomorewaste`, `com.yixinxiao.nomorewaste`, `NoMoreWaste*.sqlite`) — the rename decision binds them permanently. Watch and Mac must attach to these, not introduce new ones.
 - **Entitlement keys differ by platform**: iOS uses `aps-environment`; macOS uses `com.apple.developer.aps-environment` and additionally needs `com.apple.security.network.client` under the App Sandbox for CloudKit traffic. One shared entitlements file cannot serve both correctly.
 - **The user has a paired physical Apple Watch and a MacBook on the same iCloud account** — both watch verification and the previously-deferred same-account sync check (old task 10.1) are unblocked.
+- **The user's Apple Account has Advanced Data Protection enabled** — CloudKit on simulators sticks at `.temporarilyUnavailable` because trusted-device key provisioning cannot complete. Simulator sync work therefore requires the non-ADP test Apple ID (already needed as the second sharing account); the user's own account exercises sync only on physical devices.
 - User preference, consistently expressed: simplicity over feature count; warnings never block; destructive actions get an undo path.
 
 ## Goals / Non-Goals
@@ -63,6 +64,10 @@ The watch app's views live in a new `xwaste-watch/` synchronized folder owned by
 
 *Why not move shared files into a `Shared/` folder:* pure churn — every path in anatomy/docs changes, git history fragments, and synchronized-group membership exceptions express the same thing without moving anything.
 
+### Verification is automation-first; hardware only confirms
+
+The change adds the app's first test targets: `xwasteTests` (unit tests over in-memory Core Data), `xwaste-watchUITests` (XCUITest on the watch simulator), and — added during implementation — `xwasteUITests` (XCUITest on the iOS simulator; see the revised scope note in `tasks.md` 3.5). The store invariants — check-off merge, undo including the changed-elsewhere race, expiry, decrement-to-zero deletion, duplicate detection — are proven in unit tests, not staged on devices; with one `GroceryStore` now serving three platforms, these become the permanent regression guard for the app's stated non-negotiables. The watch gets a smoke-level XCUITest suite because nothing else can drive a watch simulator headlessly, and iOS turned out to need one for the same reason: on the Xcode 27 beta the desktop simulator panel cannot attach (it loads `SimulatorKit.framework` from a path Xcode 27 no longer uses) and no `Simulator.app` ships at all, so there is no simulator GUI to drive by hand. macOS still gets agent-driven verification instead of a UI-test suite — the Mac app is an ordinary Mac app. Both UI suites stay deliberately thin, because UI tests are the flaky, maintenance-heavy tier and a solo app doesn't need an exhaustive matrix. Sync is verified in escalating stages: a simulator CloudKit probe with the non-ADP test Apple ID (Mac ↔ iOS simulator, plus a watch-simulator reach probe), then a single hardware pass re-confirming already-passing checks on real devices with the user's ADP account. A hardware failure therefore implicates provisioning or entitlements, not logic.
+
 ### Mac window: default and minimum size, nothing fancier
 
 `defaultSize` around 480×720 with a sensible `minWidth`/`minHeight` on the root view, so the two-tab layout cannot be squashed into uselessness. No scene re-architecture.
@@ -72,6 +77,6 @@ The watch app's views live in a new `xwaste-watch/` synchronized folder owned by
 - **The pbxproj watch-target surgery is hand-written, not Xcode-generated** → highest-risk step; mitigated by doing it first, building all targets immediately, and keeping the diff reviewable. If hand-editing proves too brittle, fallback is asking the user to add the target via Xcode's GUI once and diffing what it wrote.
 - **CloudKit-only watch means a cold first launch** (empty until first import completes) → acceptable; show a syncing indicator in the empty state so it reads as "loading", not "broken". Real risk only when the watch has no iCloud, which gets the honest message instead.
 - **Watch storage of full history + two stores is heavier than typical watch apps** → dataset is text rows in the low hundreds; negligible in practice.
-- **watchOS simulator CloudKit is unreliable** → all sync-dependent watch verification runs on the physical watch; the simulator verifies layout and no-iCloud states only.
+- **Simulator CloudKit is blocked for the user's own account** (Advanced Data Protection → `.temporarilyUnavailable`) → sync on simulators is probed with the non-ADP test Apple ID rather than written off — Apple-Silicon simulators can receive sandbox APNs, so it is a live question, not a known dead end. The watch simulator's CloudKit reach is itself probed and recorded, not assumed. Whatever the probe cannot prove — notably silent-push delivery on the real account — falls to the final hardware pass.
 - **macOS TestFlight/notarization is a distinct distribution surface** → out of scope for verification here beyond local Xcode runs on the user's Mac; Mac App Store distribution is a later decision.
 - **Context menus on iOS duplicate swipe actions** → mild redundancy accepted to keep one view body per screen.

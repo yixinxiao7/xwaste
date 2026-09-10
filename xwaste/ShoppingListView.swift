@@ -11,6 +11,8 @@ struct ShoppingListView: View {
     @State private var showingHousehold = false
     @State private var banner: UndoBanner?
     @State private var bannerDismissTask: Task<Void, Never>?
+    /// Only the Mac needs a selected row — it is what the delete key acts on.
+    @State private var selection: NSManagedObjectID?
 
     /// View-local by design: leaving the tab dismisses the banner, and "Move to
     /// Shopping List" on the At Home screen is the permanent recovery path.
@@ -31,7 +33,7 @@ struct ShoppingListView: View {
     }
 
     var body: some View {
-        List {
+        List(selection: $selection) {
             ForEach(CategorySection.sections(from: items)) { section in
                 Section(section.category.displayName) {
                     ForEach(section.items, id: \.objectID) { item in
@@ -44,15 +46,26 @@ struct ShoppingListView: View {
                             .onTapGesture { editorMode = .edit(item) }
                             .swipeActions(edge: .trailing) {
                                 Button("Delete", systemImage: "trash", role: .destructive) {
-                                    // Deleting from the list never touches the inventory.
-                                    context.delete(item)
-                                    try? context.save()
+                                    delete(item)
                                 }
+                            }
+                            // Added on every platform rather than forked: the
+                            // Mac has no swipe gestures at all, and on iOS a
+                            // long-press duplicate costs less than two view
+                            // bodies that can drift apart.
+                            .contextMenu {
+                                Button("Check Off", systemImage: "checkmark.circle") { checkOff(item) }
+                                Button("Edit", systemImage: "pencil") { editorMode = .edit(item) }
+                                Button("Delete", systemImage: "trash", role: .destructive) { delete(item) }
                             }
                     }
                 }
             }
         }
+        #if os(macOS)
+        .onDeleteCommand(perform: deleteSelection)
+        .id(structureID)
+        #endif
         .overlay {
             if items.isEmpty {
                 EmptyStateView(systemImage: "cart",
@@ -76,6 +89,8 @@ struct ShoppingListView: View {
             }
             ToolbarItem(placement: .primaryAction) {
                 Button("Add Item", systemImage: "plus") { editorMode = .add(.shoppingList) }
+                    // ⌘N on the Mac; harmless on iOS with a hardware keyboard.
+                    .keyboardShortcut("n")
             }
         }
         .sheet(item: $editorMode) { mode in
@@ -87,9 +102,42 @@ struct ShoppingListView: View {
         .onDisappear { dismissBanner() }
     }
 
+    /// Identity of the list's *structure* — every row, in order. SwiftUI's
+    /// AppKit list mis-diffs a row removal out of a multi-section `List`: the
+    /// surviving rows keep the right count but redraw with a neighbour's
+    /// content, so a section header appears in a row slot. Rebuilding the list
+    /// whenever the set of rows changes sidesteps the bad diff. macOS only —
+    /// iOS diffs correctly and keeps its animations.
+    private var structureID: String {
+        items.map { $0.objectID.uriRepresentation().absoluteString }.joined(separator: "|")
+    }
+
+    /// A selection that outlives its row leaves the macOS list diffing against
+    /// a row that no longer exists, and it renders the *neighbouring* rows with
+    /// the wrong content — a section header can end up drawn in a row slot.
+    /// Every path that removes a row has to drop the selection first.
+    private func forgetSelection(of item: GroceryItem) {
+        if selection == item.objectID { selection = nil }
+    }
+
+    /// Deleting from the list never touches the inventory.
+    private func delete(_ item: GroceryItem) {
+        forgetSelection(of: item)
+        context.delete(item)
+        try? context.save()
+    }
+
+    /// The delete key's target on the Mac, where there is no swipe gesture.
+    private func deleteSelection() {
+        guard let selection,
+              let item = try? context.existingObject(with: selection) as? GroceryItem else { return }
+        delete(item)
+    }
+
     /// Single tap, no confirmation dialog — the undo banner is the safety net.
     private func checkOff(_ item: GroceryItem) {
         let name = item.displayName
+        forgetSelection(of: item)
         guard let undo = GroceryStore.checkOff(item, context: context) else { return }
         showBanner(UndoBanner(message: "Checked off \(name)", undo: undo))
     }
