@@ -23,7 +23,7 @@
       "error_message": "Significant refactor of ",
       "file": "openspec/changes/add-grocery-inventory/specs/grocery-items/spec.md",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 8→18 lines (3 removed) | Also: The system SHALL persist every grocery item as a s; - **THEN** the system stores one record with displ",
+      "fix": "Rewrote 8\u219218 lines (3 removed) | Also: The system SHALL persist every grocery item as a s; - **THEN** the system stores one record with displ",
       "tags": [
         "auto-detected",
         "refactor",
@@ -36,7 +36,7 @@
     {
       "id": "bug-003",
       "timestamp": "2026-07-21T16:40:00Z",
-      "error_message": "User: 'I do not see the continue skill. are you referring to something else' — recommended /opsx:continue, which is not installed",
+      "error_message": "User: 'I do not see the continue skill. are you referring to something else' \u2014 recommended /opsx:continue, which is not installed",
       "file": ".claude/commands/opsx/update.md",
       "root_cause": "The opsx:update skill's own instructions reference /opsx:continue for creating not-yet-existing artifacts, but only six opsx commands are installed on this machine (apply, archive, explore, propose, sync, update). The skill text is stale relative to the installed command set, and I repeated its recommendation without verifying the command exists.",
       "fix": "Verified installed commands via `ls .claude/commands/opsx/` and `openspec --help`. Wrote the missing specs/household-sharing/spec.md directly instead of deferring to a nonexistent command; change still validates strict. Going forward: verify a slash command exists before recommending it, especially when the recommendation comes from inside another skill's text.",
@@ -57,7 +57,7 @@
       "error_message": "Significant refactor of ",
       "file": "openspec/changes/add-grocery-inventory/tasks.md",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 8→10 lines (4 removed) | Also: - [ ] 3.4 Set the merge policy to `NSMergeByProper; - [ ] 3.5 On first launch, create exactly one `Hou | Also: ## 10. iCloud sync — BLOCKED until developer accou; - [ ] 10.1 Confirm the Apple Developer Program mem | Also: - [ ] 1.2 Confirm the membership is active and the; - [ ] 1.3 Add the iCloud capability with CloudKit  | Also: - [ ] 3.4 Confirm the store loads and the schema i; - [ ] 3.5 Set the merge policy to `NSMergeByProper | Also: - [ ] 9.8 Confirm all data survives a force-quit a; - [ ] 9.9 Run `openspec validate add-grocery-inven",
+      "fix": "Rewrote 8\u219210 lines (4 removed) | Also: - [ ] 3.4 Set the merge policy to `NSMergeByProper; - [ ] 3.5 On first launch, create exactly one `Hou | Also: ## 10. iCloud sync \u2014 BLOCKED until developer accou; - [ ] 10.1 Confirm the Apple Developer Program mem | Also: - [ ] 1.2 Confirm the membership is active and the; - [ ] 1.3 Add the iCloud capability with CloudKit  | Also: - [ ] 3.4 Confirm the store loads and the schema i; - [ ] 3.5 Set the merge policy to `NSMergeByProper | Also: - [ ] 9.8 Confirm all data survives a force-quit a; - [ ] 9.9 Run `openspec validate add-grocery-inven",
       "tags": [
         "auto-detected",
         "refactor",
@@ -73,7 +73,7 @@
       "error_message": "Significant refactor of ",
       "file": "openspec/changes/add-grocery-inventory/design.md",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 7→9 lines (4 removed)",
+      "fix": "Rewrote 7\u21929 lines (4 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -105,7 +105,7 @@
       "error_message": "Significant refactor of ",
       "file": "openspec/changes/add-grocery-inventory/specs/item-categorization/spec.md",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 18→55 lines (4 removed)",
+      "fix": "Rewrote 18\u219255 lines (4 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -152,7 +152,7 @@
       "timestamp": "2026-07-22T03:28:12.385Z",
       "error_message": "Missing error handling in unknown",
       "file": "openspec/changes/add-grocery-inventory/design.md",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "root_cause": "Code path had no error handling \u2014 exceptions would propagate uncaught",
       "fix": "Added try/catch block",
       "tags": [
         "auto-detected",
@@ -169,7 +169,7 @@
       "error_message": "Wrong reference: household should be householdGoods",
       "file": "openspec/changes/add-grocery-inventory/tasks.md",
       "root_cause": "Used \"household\" instead of \"householdGoods\"",
-      "fix": "Changed household → householdGoods",
+      "fix": "Changed household \u2192 householdGoods",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -185,7 +185,7 @@
       "error_message": "Significant refactor of ",
       "file": "openspec/changes/add-grocery-inventory/tasks.md",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 4→6 lines (4 removed) | Also: - [ ] 5.7 Implement `moveBackToShoppingList(_:cont; - [ ] 5.8 Implement `rename(_:to:context:)` that r | Also: - [ ] 9.10 Switch tabs mid-edit; confirm scroll po; - [ ] 9.11 Confirm all data survives a force-quit ",
+      "fix": "Rewrote 4\u21926 lines (4 removed) | Also: - [ ] 5.7 Implement `moveBackToShoppingList(_:cont; - [ ] 5.8 Implement `rename(_:to:context:)` that r | Also: - [ ] 9.10 Switch tabs mid-edit; confirm scroll po; - [ ] 9.11 Confirm all data survives a force-quit ",
       "tags": [
         "auto-detected",
         "refactor",
@@ -214,7 +214,7 @@
     {
       "id": "bug-014",
       "timestamp": "2026-07-22T13:20:00Z",
-      "error_message": "momc: Entity 'GroceryItem' has an unexpected code generation type 'manual' — Could not determine generated file paths for Core Data code generation",
+      "error_message": "momc: Entity 'GroceryItem' has an unexpected code generation type 'manual' \u2014 Could not determine generated file paths for Core Data code generation",
       "file": "nomorewaste/NoMoreWaste.xcdatamodeld/NoMoreWaste.xcdatamodel/contents",
       "root_cause": "Hand-wrote codeGenerationType=\"manual\" in the model XML. momc only accepts \"class\" or \"category\"; Xcode expresses Manual/None by omitting the attribute entirely.",
       "fix": "Removed the codeGenerationType attribute from both entities; hand-written @objc NSManagedObject subclasses then compile fine.",
@@ -252,7 +252,7 @@
       "error_message": "Significant refactor of ",
       "file": "nomorewaste/PersistenceController.swift",
       "root_cause": "9 lines replaced/restructured",
-      "fix": "Rewrote 33→62 lines (9 removed)",
+      "fix": "Rewrote 33\u219262 lines (9 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -284,7 +284,7 @@
       "error_message": "Wrong reference: CoreData should be Combine",
       "file": "nomorewaste/SharingController.swift",
       "root_cause": "Used \"CoreData\" instead of \"Combine\"",
-      "fix": "Changed CoreData → Combine",
+      "fix": "Changed CoreData \u2192 Combine",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -313,7 +313,7 @@
     {
       "id": "bug-016",
       "timestamp": "2026-07-22T15:40:00Z",
-      "error_message": "CloudKit runtime warning: 'CloudKit push notifications require the remote-notification background mode in your info plist' — and built Info.plist contained neither UIBackgroundModes nor CKSharingSupported despite INFOPLIST_KEY_* build settings",
+      "error_message": "CloudKit runtime warning: 'CloudKit push notifications require the remote-notification background mode in your info plist' \u2014 and built Info.plist contained neither UIBackgroundModes nor CKSharingSupported despite INFOPLIST_KEY_* build settings",
       "file": "nomorewaste.xcodeproj/project.pbxproj",
       "root_cause": "INFOPLIST_KEY_UIBackgroundModes and INFOPLIST_KEY_CKSharingSupported are not in Xcode's supported INFOPLIST_KEY_* allowlist (96 keys in CoreBuildSystem.xcspec); unknown names are silently ignored, so both keys were missing from the generated Info.plist. tasks.md 11.2 assumed the setting existed.",
       "fix": "Created partial nomorewaste/Info.plist with both keys; set INFOPLIST_FILE alongside GENERATE_INFOPLIST_FILE=YES (contents merge); added PBXFileSystemSynchronizedBuildFileExceptionSet with membershipExceptions=(Info.plist) to stop the synchronized group double-producing it. Verified keys in the built app's Info.plist and the CloudKit warning gone.",
@@ -332,7 +332,7 @@
     {
       "id": "bug-017",
       "timestamp": "2026-07-22T18:45:00Z",
-      "error_message": "User: 'I think there's an issue that is preventing the simulator from working' — investigation found no actual failure",
+      "error_message": "User: 'I think there's an issue that is preventing the simulator from working' \u2014 investigation found no actual failure",
       "file": "n/a (simulator environment)",
       "root_cause": "Console noise mistaken for breakage. Repeated red 'Unable to initialize without an iCloud account (CKAccountStatusNoAccount)' + 'Failed to recover from error' lines are CloudKit mirroring's designed no-account degradation, not a fault; 'Unable to discover any Simulator runtimes' in CoreSimulator.log is cosmetic with cryptex-mounted runtimes; 'device in creation state / will be re-created' was transient during the iOS 26.5 runtime install.",
       "fix": "No fix needed. Verified: app installs, launches, and renders on both iOS 27 and iOS 26.5 simulators; no crash reports. The noise stops once an iCloud account is signed in (also unblocks schema push, task 3.4).",
@@ -353,7 +353,7 @@
       "error_message": "Wrong reference: topBarLeading should be navigation",
       "file": "nomorewaste/HomeInventoryView.swift",
       "root_cause": "RESOLVED: first-time provisioning of a brand-new CloudKit container on a day-old developer membership. Client config was verifiably correct throughout (profile embedded the container + capability). After visiting the CloudKit Console / short propagation wait, the identical build succeeded.",
-      "fix": "Opened the container in CloudKit Console (icloud.developer.apple.com) per instructions and redeployed — 'CloudKit development schema push succeeded' on device. Tasks 3.4/3.5 closed; schema now in the CloudKit development environment.",
+      "fix": "Opened the container in CloudKit Console (icloud.developer.apple.com) per instructions and redeployed \u2014 'CloudKit development schema push succeeded' on device. Tasks 3.4/3.5 closed; schema now in the CloudKit development environment.",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -369,7 +369,7 @@
       "error_message": "Wrong reference: topBarLeading should be navigation",
       "file": "nomorewaste/ShoppingListView.swift",
       "root_cause": "Used \"topBarLeading\" instead of \"navigation\"",
-      "fix": "Changed topBarLeading → navigation",
+      "fix": "Changed topBarLeading \u2192 navigation",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -385,7 +385,7 @@
       "error_message": "Wrong reference: navigationBarTitleDisplayMode should be toolbarTitleDisplayMode",
       "file": "nomorewaste/ItemEditorView.swift",
       "root_cause": "Used \"navigationBarTitleDisplayMode\" instead of \"toolbarTitleDisplayMode\"",
-      "fix": "Changed navigationBarTitleDisplayMode → toolbarTitleDisplayMode",
+      "fix": "Changed navigationBarTitleDisplayMode \u2192 toolbarTitleDisplayMode",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -401,7 +401,7 @@
       "error_message": "Wrong reference: navigationBarTitleDisplayMode should be toolbarTitleDisplayMode",
       "file": "nomorewaste/HouseholdView.swift",
       "root_cause": "Used \"navigationBarTitleDisplayMode\" instead of \"toolbarTitleDisplayMode\"",
-      "fix": "Changed navigationBarTitleDisplayMode → toolbarTitleDisplayMode",
+      "fix": "Changed navigationBarTitleDisplayMode \u2192 toolbarTitleDisplayMode",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -434,8 +434,8 @@
       "timestamp": "2026-07-22T19:20:00Z",
       "error_message": "macOS dialog on launch: \"'nomorewaste' differs from previously opened versions... will allow it to access data from previously used versions\"",
       "file": "n/a (macOS app container protection)",
-      "root_cause": "User's Xcode run destination is 'My Mac'. macOS app-container protection prompts when an app's code signature changes between runs — which it did: ad-hoc -> team P8L779MGGP after Xcode sign-in, plus rebuilds. Not a simulator issue; iOS simulator runs never show this dialog.",
-      "fix": "Click Open (own debug build, no meaningful Mac data). Recurrence reset: delete ~/Library/Containers/com.yixinxiao.nomorewaste. Real fix for workflow: switch run destination to an iPhone simulator — macOS is a declared but no-effort platform in this change.",
+      "root_cause": "User's Xcode run destination is 'My Mac'. macOS app-container protection prompts when an app's code signature changes between runs \u2014 which it did: ad-hoc -> team P8L779MGGP after Xcode sign-in, plus rebuilds. Not a simulator issue; iOS simulator runs never show this dialog.",
+      "fix": "Click Open (own debug build, no meaningful Mac data). Recurrence reset: delete ~/Library/Containers/com.yixinxiao.nomorewaste. Real fix for workflow: switch run destination to an iPhone simulator \u2014 macOS is a declared but no-effort platform in this change.",
       "tags": [
         "macos",
         "code-signing",
@@ -454,7 +454,7 @@
       "timestamp": "2026-07-22T19:35:00Z",
       "error_message": "Wrongly concluded no simulator was signed into iCloud; shut down the user's signed-in simulator as an 'extra'",
       "file": "n/a (diagnostic method)",
-      "root_cause": "Checked sign-in via `simctl spawn <udid> defaults read MobileMeAccounts` — that domain no longer exists on iOS 26 simulators even when an account IS signed in, so the check false-negatives. The user's iPhone 17 sim (E29A3E4F) was signed in the whole time.",
+      "root_cause": "Checked sign-in via `simctl spawn <udid> defaults read MobileMeAccounts` \u2014 that domain no longer exists on iOS 26 simulators even when an account IS signed in, so the check false-negatives. The user's iPhone 17 sim (E29A3E4F) was signed in the whole time.",
       "fix": "Ground truth for simulator iCloud state = screenshot of Settings (simctl io screenshot) or the app's own CKAccountInfo log lines (accountStatus/hasValidCredentials). Do not use MobileMeAccounts on modern runtimes.",
       "tags": [
         "simulator",
@@ -475,7 +475,7 @@
       "error_message": "CKAccountStatusTemporarilyUnavailable persists on simulator: schema push blocked; 6 retries over ~5 min incl. sim reboot did not clear it",
       "file": "n/a (account/simulator environment)",
       "root_cause": "The signed-in Apple Account has Advanced Data Protection enabled (walrus=Enabled in CKAccountInfo). ADP requires E2E key provisioning via trusted-device sync, which simulators often cannot complete ('Trusted devices list is not available'), leaving CloudKit accountStatus stuck at Temporarily Unavailable indefinitely.",
-      "fix": "Not yet resolved. Paths: (1) complete any pending verification prompt in sim Settings; (2) run schema push once from the user's physical iPhone via Xcode with PUSH_CK_SCHEMA=1 scheme env var — real device has ADP keys; (3) dedicated test Apple ID without ADP for simulator work (also needed as the second account for group 12).",
+      "fix": "Not yet resolved. Paths: (1) complete any pending verification prompt in sim Settings; (2) run schema push once from the user's physical iPhone via Xcode with PUSH_CK_SCHEMA=1 scheme env var \u2014 real device has ADP keys; (3) dedicated test Apple ID without ADP for simulator work (also needed as the second account for group 12).",
       "tags": [
         "cloudkit",
         "simulator",
@@ -496,7 +496,7 @@
       "error_message": "Schema push from physical iPhone: CKError 15/2000 'Server Rejected Request' on zone modification for container iCloud.com.yixinxiao.nomorewaste (both stores)",
       "file": "n/a (CloudKit server side)",
       "root_cause": "RESOLVED: first-time provisioning of a brand-new CloudKit container on a day-old developer membership. Client config was verifiably correct throughout (profile embedded the container + capability). After visiting the CloudKit Console / short propagation wait, the identical build succeeded.",
-      "fix": "Opened the container in CloudKit Console (icloud.developer.apple.com) per instructions and redeployed — 'CloudKit development schema push succeeded' on device. Tasks 3.4/3.5 closed; schema now in the CloudKit development environment.",
+      "fix": "Opened the container in CloudKit Console (icloud.developer.apple.com) per instructions and redeployed \u2014 'CloudKit development schema push succeeded' on device. Tasks 3.4/3.5 closed; schema now in the CloudKit development environment.",
       "tags": [
         "cloudkit",
         "server-rejected",
@@ -533,7 +533,7 @@
       "error_message": "Wrong reference: StateObject should be ObservedObject",
       "file": "nomorewaste/HouseholdView.swift",
       "root_cause": "Used \"StateObject\" instead of \"ObservedObject\"",
-      "fix": "Changed StateObject → ObservedObject",
+      "fix": "Changed StateObject \u2192 ObservedObject",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -548,7 +548,7 @@
       "timestamp": "2026-07-24T00:00:00Z",
       "error_message": "User: 'Set Up Sharing hangs on the spinning icon, unable to press Done'; share was actually created (visible after force-quit)",
       "file": "nomorewaste/SharingController.swift",
-      "root_cause": "NSPersistentCloudKitContainer.share(_:to:) does blocking work on its calling thread, and under SWIFT_APPROACHABLE_CONCURRENCY (nonisolated(nonsending) caller's-actor semantics) the awaited async import ran it ON the main actor — freezing UI and deadlocking against completion delivery. Server record was created before the deadlock, hence post-restart visibility.",
+      "root_cause": "NSPersistentCloudKitContainer.share(_:to:) does blocking work on its calling thread, and under SWIFT_APPROACHABLE_CONCURRENCY (nonisolated(nonsending) caller's-actor semantics) the awaited async import ran it ON the main actor \u2014 freezing UI and deadlocking against completion delivery. Server record was created before the deadlock, hence post-restart visibility.",
       "fix": "createShare now wraps the completion-handler share(_:to:completion:) and persistUpdatedShare(_:in:completion:) in Task.detached + withCheckedThrowingContinuation, so all container work happens off the main actor; only the @Published share assignment returns to main.",
       "tags": [
         "cloudkit",
@@ -591,7 +591,7 @@
       "error_message": "Significant refactor of ",
       "file": "nomorewaste/SharingController.swift",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 4→5 lines (3 removed)",
+      "fix": "Rewrote 4\u21925 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -606,8 +606,8 @@
       "timestamp": "2026-07-26T10:30:00Z",
       "error_message": "Release-config warnings: 'call to main actor-isolated static method normalize in a synchronous nonisolated context' (CategoryClassifier x2) + weak/strong capture warning in SharingController observer",
       "file": "nomorewaste/GroceryItem.swift, nomorewaste/SharingController.swift",
-      "root_cause": "nonisolated on a class declaration does NOT extend to members declared in its extensions — they get the project's MainActor default, so GroceryItem.normalize was MainActor while its callers (nonisolated CategoryClassifier) were not. Swift 5 mode made it a warning, but it's an error in Swift 6 mode and a latent misisolation. The observer closure also implicitly strong-captured self alongside an inner weak capture (retain until observer removal).",
-      "fix": "Marked normalize and foldTrailingPlural explicitly nonisolated; observer closure now [weak self] with early unwrap to a local strong ref passed into the MainActor Task. Release device build now has zero warnings. Note: [self] capture-list + implicit member refs does NOT satisfy 'explicit use of self' in Swift 5 mode — use a named local instead.",
+      "root_cause": "nonisolated on a class declaration does NOT extend to members declared in its extensions \u2014 they get the project's MainActor default, so GroceryItem.normalize was MainActor while its callers (nonisolated CategoryClassifier) were not. Swift 5 mode made it a warning, but it's an error in Swift 6 mode and a latent misisolation. The observer closure also implicitly strong-captured self alongside an inner weak capture (retain until observer removal).",
+      "fix": "Marked normalize and foldTrailingPlural explicitly nonisolated; observer closure now [weak self] with early unwrap to a local strong ref passed into the MainActor Task. Release device build now has zero warnings. Note: [self] capture-list + implicit member refs does NOT satisfy 'explicit use of self' in Swift 5 mode \u2014 use a named local instead.",
       "tags": [
         "swift-concurrency",
         "nonisolated",
@@ -628,7 +628,7 @@
       "error_message": "Wrong reference: NoMoreWasteApp should be XWasteApp",
       "file": "xwaste/XWasteApp.swift",
       "root_cause": "Used \"NoMoreWasteApp\" instead of \"XWasteApp\"",
-      "fix": "Changed NoMoreWasteApp → XWasteApp",
+      "fix": "Changed NoMoreWasteApp \u2192 XWasteApp",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -637,6 +637,214 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-07-29T02:09:45.959Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-07-29T03:33:05.003Z",
+      "error_message": "Significant refactor of ",
+      "file": "xwaste/ShoppingListView.swift",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 24\u219234 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:33:05.003Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-07-29T03:33:31.061Z",
+      "error_message": "Significant refactor of ",
+      "file": "xwaste/HomeInventoryView.swift",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 28\u219237 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:33:31.061Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-07-29T03:46:53.056575Z",
+      "error_message": "Unit tests crashed: 'CoreData: error: +[Household entity] Failed to find a unique match for an NSEntityDescription to a managed object subclass', then 'libc++abi: terminating due to uncaught exception of type NSException'",
+      "file": "xwaste/PersistenceController.swift",
+      "root_cause": "NSPersistentCloudKitContainer(name:) loads a FRESH NSManagedObjectModel per instance. Each unit test builds its own in-memory PersistenceController, so N models declaring the same entities were loaded at once and Core Data could no longer map an entity name to its NSManagedObject subclass. Single-container apps never hit this; a second stack (previews + app, or one per test) does.",
+      "fix": "Load the model exactly once into a static `managedObjectModel` (Bundle(for: GroceryItem.self) -> XWaste.momd) and pass it to NSPersistentCloudKitContainer(name:managedObjectModel:).",
+      "tags": [
+        "core-data",
+        "tests",
+        "nsmanagedobjectmodel",
+        "persistence"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:46:53.056575Z"
+    },
+    {
+      "id": "bug-041",
+      "timestamp": "2026-07-29T03:46:53.056575Z",
+      "error_message": "Watch XCUITest: tapping the check-off button on a shopping-list row opened the quantity screen instead. Accessibility dump after the tap showed quantity-value/quantity-increment, no check-off confirmation.",
+      "file": "xwaste-watch/WatchListView.swift",
+      "root_cause": "On watchOS a NavigationLink placed inside a List row claims the WHOLE row's tap, so the sibling check-off Button never receives it. This violates the watch-app spec scenario 'Quantity controls do not steal the check-off tap'.",
+      "fix": "Removed the row-level NavigationLink. The quantity control is now a plain Button that sets @State quantityItemID; the list pushes via .navigationDestination(item:). Decrement-to-zero reports back through an onRemoved closure so the list owns the confirmation (the detail view's own item is deleted by then).",
+      "tags": [
+        "watchos",
+        "swiftui",
+        "navigationlink",
+        "xcuitest",
+        "check-off"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:46:53.056575Z"
+    },
+    {
+      "id": "bug-042",
+      "timestamp": "2026-07-29T03:46:53.056575Z",
+      "error_message": "xcodebuild test: 'xwaste (54370) encountered an error (Early unexpected exit ... The test runner crashed before establishing connection)' with '[CK] In order to use CloudKit, your process must have a com.apple.developer.icloud-services entitlement'",
+      "file": "xwaste.xcodeproj/project.pbxproj",
+      "root_cause": "Passing CODE_SIGNING_ALLOWED=NO to `xcodebuild test` skips entitlement embedding, so the host app's CloudKit store fails to load and PersistenceController's fatalError kills the test runner. Fine for `build`, fatal for `test`.",
+      "fix": "Run simulator tests WITHOUT CODE_SIGNING_ALLOWED=NO \u2014 simulator builds ad-hoc sign and do embed entitlements.",
+      "tags": [
+        "xcodebuild",
+        "tests",
+        "entitlements",
+        "cloudkit",
+        "simulator"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:46:53.056575Z"
+    },
+    {
+      "id": "bug-043",
+      "timestamp": "2026-07-29T03:50:17.131Z",
+      "error_message": "Significant refactor of ",
+      "file": "xwaste-watch/WatchListView.swift",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 48\u219258 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-29T03:50:17.131Z"
+    },
+    {
+      "id": "bug-044",
+      "timestamp": "2026-08-05T16:15:28.810Z",
+      "error_message": "Incorrect value in code",
+      "file": "openspec/changes/add-watchos-macos/design.md",
+      "root_cause": "Had ` (unit tests over in-memory Core Data) and `",
+      "fix": "Changed to ` (unit tests over in-memory Core Data), `",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-05T16:15:28.810Z"
+    },
+    {
+      "id": "bug-045",
+      "timestamp": "2026-08-05T16:26:29.863Z",
+      "error_message": "Incorrect value in code",
+      "file": "CLAUDE.md",
+      "root_cause": "Had ` (Swift Testing over an in-memory Core Data stack",
+      "fix": "Changed to ` (Swift Testing over an in-memory Core Data stack",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-05T16:26:29.863Z"
+    },
+    {
+      "id": "bug-046",
+      "timestamp": "2026-08-05T16:53:31.138485Z",
+      "error_message": "macOS: after removing a row from the shopping list (delete OR check-off), surviving rows redraw with a neighbour's content - a section header rendered inside a row slot, and the remaining item vanished from view. Data was correct; only the rendering was wrong. Persisted across tab switches.",
+      "file": "xwaste/ShoppingListView.swift",
+      "root_cause": "SwiftUI's AppKit-backed List mis-diffs a row removal out of a MULTI-SECTION List: the row count updates correctly but content is drawn from the wrong index. PRE-EXISTING since v1 (reproduces via the v1 check-off path) - it was simply never seen because nobody ran the Mac build. Ruled out as causes: List(selection:), .onDeleteCommand, FetchRequest animation, and the Section(_:) vs Section{}header:{} form - all still reproduced.",
+      "fix": "macOS-only `.id(structureID)` on the List, where structureID is the ordered join of every row's objectID URI. Any insertion/removal changes it and rebuilds the list, sidestepping the bad diff; quantity edits don't change it, so in-place updates still animate. iOS keeps its animated diffing.",
+      "tags": [
+        "macos",
+        "swiftui",
+        "list",
+        "sections",
+        "rendering",
+        "pre-existing"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-05T16:53:31.138485Z"
+    },
+    {
+      "id": "bug-047",
+      "timestamp": "2026-08-05T16:53:31.138485Z",
+      "error_message": "macOS: the app launched at its MINIMUM width, not its .defaultSize, so the toolbar's Household and Add buttons were collapsed into an overflow chevron on every launch.",
+      "file": "xwaste/XWasteApp.swift",
+      "root_cause": "`.frame(minWidth:minHeight:)` on the root view supplies the window's ideal size when no idealWidth/idealHeight is given, so SwiftUI sized the window to the minimum and `.defaultSize` never applied. At 380pt the toolbar cannot fit traffic lights + Household + tab picker + Add.",
+      "fix": "Raised the floor to `.frame(minWidth: 480, idealWidth: 480, minHeight: 520, idealHeight: 720)`. 480pt is the measured width at which the whole toolbar fits with no overflow.",
+      "tags": [
+        "macos",
+        "swiftui",
+        "window",
+        "toolbar",
+        "defaultSize"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-05T16:53:31.138485Z"
+    },
+    {
+      "id": "bug-048",
+      "timestamp": "2026-08-07T04:39:17.500093Z",
+      "error_message": "iPhone Watch app: 'This app could not be installed at this time.' when installing xwaste onto a physical Apple Watch.",
+      "file": "xwaste-watch/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "root_cause": "The watch target had NO asset catalog and no ASSETCATALOG_COMPILER_APPICON_NAME, so the built bundle contained no Assets.car and no CFBundleIconName. watchOS refuses to install an app without an app icon on a PHYSICAL device; the simulator does not care, so all 10 watch XCUITests passed and every simulator build succeeded while the device install was impossible.",
+      "fix": "Added xwaste-watch/Assets.xcassets with a watchOS AppIcon.appiconset (single 1024x1024, platform 'watchos') reusing the iOS icon PNG, and set ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon on both watch build configs. Verified the built bundle now has Assets.car containing AppIcon and Info.plist CFBundleIcons.CFBundleIconName = AppIcon.",
+      "tags": [
+        "watchos",
+        "app-icon",
+        "device-install",
+        "assets",
+        "simulator-vs-device"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-07T04:39:17.500093Z"
+    },
+    {
+      "id": "bug-049",
+      "timestamp": "2026-09-09T17:08:33.890894Z",
+      "error_message": "Apple Watch showed 'Nothing to buy' on a fresh install while the paired iPhone showed a full list, on the same iCloud account and same CloudKit environment.",
+      "file": "xwaste/PersistenceController.swift",
+      "root_cause": "resolveActiveHousehold() runs at launch when a fresh install's local store is still empty. Finding no Household it CREATES one and persists its id as active. CloudKit then imports the real household and its items, but activeHousehold stays pinned to the invented empty one, and every fetch is scoped to it - so the device shows an empty list forever while the synced data sits unreachable in the same store. It also leaves a stray empty Household in the user's private CloudKit database. Latent since v1; impossible to hit on a single device, which is exactly why deferred task 10.1 (same-account second-device sync) never caught it.",
+      "fix": "Track activeHouseholdWasAutoCreated (persisted across launches, since the first import often lands after a relaunch). While that flag is set, adoptSyncedHouseholdIfPresent() switches to the earliest other household as soon as one arrives, deletes the invented empty one, and clears the flag. Runs at init and on every .NSPersistentStoreRemoteChange. Guards: never adopts if the invented household already has items (a user who added before the first import keeps them), and never overrides an explicit activate(). Four regression tests in ActiveHouseholdAdoptionTests.",
+      "tags": [
+        "cloudkit",
+        "core-data",
+        "sync",
+        "fresh-install",
+        "second-device",
+        "watchos",
+        "deferred-10.1"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-09T17:08:33.890894Z"
     }
   ]
 }

@@ -280,3 +280,254 @@
 | 22:40 | Created openspec/changes/add-watchos-macos/tasks.md | — | ~2073 |
 | 2026-07-28 | Proposed add-watchos-macos: user chose check-off-focused watch scope + has physical watch. 4 artifacts written (proposal, design, 2 new capability specs watch-app/mac-experience, 37 tasks in 8 groups); validate --strict clean | openspec/changes/add-watchos-macos/ | ready for /opsx:apply | ~5k |
 | 22:40 | Session end: 6 writes across 5 files (CODEOWNERS, proposal.md, design.md, spec.md, tasks.md) | 0 reads | ~8483 tok |
+
+## Session: 2026-07-29 22:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:52 | Probed simulator coverage for add-watchos-macos groups 6-7 (no code changes) | .wolf/cerebrum.md | watchOS sim drivable via simctl only, not MCP panel; ADP still blocks sim CloudKit | ~9k |
+| 23:05 | Restructured add-watchos-macos plan proposal: automation-first, hardware last (chat only, artifacts untouched) | - | pending user approval to fold into tasks.md | ~2k |
+| 23:05 | Created openspec/changes/add-watchos-macos/tasks.md | — | ~3501 |
+| 23:20 | opsx:update - rewrote tasks.md automation-first (10 groups, test targets, sim probe, hardware last) | openspec/changes/add-watchos-macos/tasks.md | written; design/proposal coherence edits pending confirmation | ~6k |
+| 23:06 | Edited openspec/changes/add-watchos-macos/design.md | 1→2 lines | ~150 |
+| 23:06 | Edited openspec/changes/add-watchos-macos/design.md | 1→5 lines | ~348 |
+| 23:06 | Edited openspec/changes/add-watchos-macos/design.md | inline fix | ~135 |
+| 23:06 | Edited openspec/changes/add-watchos-macos/proposal.md | inline fix | ~86 |
+| 23:06 | Edited openspec/changes/add-watchos-macos/proposal.md | inline fix | ~121 |
+| 23:25 | opsx:update - design.md (ADP constraint, testing-strategy decision, risk rewrite) + proposal.md (test targets, verification reframe) coherence edits | design.md, proposal.md | valid, change coherent | ~3k |
+| 23:07 | Session end: 6 writes across 3 files (tasks.md, design.md, proposal.md) | 6 reads | ~12058 tok |
+
+## Session: 2026-07-29 23:08
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-07-29 23:08
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-07-29 23:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 23:11 | Created xwaste-watch/XWasteWatchApp.swift | — | ~39 |
+| 23:11 | Created xwaste-watch/xwaste-watch.entitlements | — | ~127 |
+| 23:11 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+29 lines) | ~411 |
+| 23:11 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+22 lines) | ~326 |
+| 23:11 | Edited xwaste.xcodeproj/project.pbxproj | 6→11 lines | ~68 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | 11→13 lines | ~101 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+25 lines) | ~358 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | 3→6 lines | ~42 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | 5→6 lines | ~39 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+18 lines) | ~221 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+60 lines) | ~662 |
+| 23:12 | Edited xwaste.xcodeproj/project.pbxproj | expanded (+8 lines) | ~150 |
+| 23:13 | Edited xwaste/CategorySection.swift | expanded (+6 lines) | ~134 |
+| 23:13 | Edited xwaste/CategorySection.swift | 6→7 lines | ~23 |
+| 23:13 | Edited xwaste.xcodeproj/project.pbxproj | inline fix | ~64 |
+| 23:13 | Edited xwaste.xcodeproj/project.pbxproj | 3→4 lines | ~47 |
+| 23:14 | Created xwaste/xwaste-macOS.entitlements | — | ~267 |
+| 23:17 | Created xwasteTests/GroceryStoreTests.swift | — | ~221 |
+| 23:17 | Created xwaste-watchUITests/XWasteWatchUITests.swift | — | ~123 |
+| 23:17 | Edited xwaste.xcodeproj/xcshareddata/xcschemes/xwaste.xcscheme | expanded (+12 lines) | ~151 |
+| 23:17 | Created xwaste.xcodeproj/xcshareddata/xcschemes/xwaste-watch.xcscheme | — | ~904 |
+| 23:28 | Created xwasteTests/GroceryStoreTests.swift | — | ~2988 |
+| 23:30 | Created xwaste-watch/XWasteWatchApp.swift | — | ~551 |
+| 23:30 | Created xwaste-watch/WatchAccountMonitor.swift | — | ~1096 |
+| 23:31 | Created xwaste-watch/WatchRootView.swift | — | ~612 |
+| 23:31 | Created xwaste-watch/WatchListView.swift | — | ~1685 |
+| 23:31 | Edited xwaste-watch/WatchListView.swift | modified HStack() | ~358 |
+| 23:31 | Created xwaste-watch/WatchConfirmationView.swift | — | ~384 |
+| 23:32 | Created xwaste-watch/WatchQuantityView.swift | — | ~696 |
+| 23:32 | Edited xwaste/ShoppingListView.swift | 4→6 lines | ~91 |
+| 23:33 | Edited xwaste/ShoppingListView.swift | modified List() | ~485 |
+| 23:33 | Edited xwaste/ShoppingListView.swift | modified ToolbarItem() | ~78 |
+| 23:33 | Edited xwaste/ShoppingListView.swift | modified delete() | ~161 |
+| 23:33 | Edited xwaste/HomeInventoryView.swift | 2→4 lines | ~63 |
+| 23:33 | Edited xwaste/HomeInventoryView.swift | modified List() | ~530 |
+| 23:33 | Edited xwaste/HomeInventoryView.swift | modified delete() | ~281 |
+| 23:33 | Edited xwaste/XWasteApp.swift | 6→11 lines | ~99 |
+| 23:33 | Edited xwaste/XWasteApp.swift | 4→9 lines | ~86 |
+| 23:34 | Edited xwaste/PersistenceController.swift | modified init() | ~265 |
+| 23:35 | Edited xwaste-watch/XWasteWatchApp.swift | modified Double() | ~199 |
+| 23:35 | Created xwaste-watchUITests/XWasteWatchUITests.swift | — | ~2310 |
+| 23:36 | Edited README.md | 5→5 lines | ~55 |
+| 23:36 | Edited README.md | 1→5 lines | ~245 |
+| 23:44 | Edited xwaste-watchUITests/XWasteWatchUITests.swift | 3→4 lines | ~42 |
+| 23:45 | Edited xwaste-watch/WatchListView.swift | 2→6 lines | ~110 |
+| 23:45 | Edited xwaste-watch/WatchListView.swift | modified ForEach() | ~205 |
+| 23:45 | Edited xwaste-watch/WatchListView.swift | modified HStack() | ~314 |
+| 23:45 | Created xwaste-watch/WatchQuantityView.swift | — | ~629 |
+| 23:45 | Edited xwaste-watch/WatchListView.swift | modified navigationDestination() | ~64 |
+| 23:46 | Edited xwaste-watch/WatchListView.swift | modified itemWasRemoved() | ~115 |
+| 23:46 | Edited xwaste-watchUITests/XWasteWatchUITests.swift | 4→3 lines | ~22 |
+| 23:49 | Edited xwaste-watchUITests/XWasteWatchUITests.swift | 3→4 lines | ~42 |
+| 23:50 | Edited xwaste-watch/WatchListView.swift | modified HStack() | ~601 |
+| 00:01 | Edited xwaste-watch/WatchConfirmationView.swift | 4→6 lines | ~62 |
+| 00:01 | Edited xwaste-watchUITests/XWasteWatchUITests.swift | 4→3 lines | ~22 |
+| 00:03 | Edited xwaste-watchUITests/XWasteWatchUITests.swift | modified testCaptureScreenshotsForVisualReview() | ~517 |
+| 00:12 | Edited CLAUDE.md | expanded (+16 lines) | ~381 |
+
+| 00:13 | opsx:apply add-watchos-macos groups 1-7,10: watch target + tests + watch UI + Mac parity | project.pbxproj, xwaste-watch/*, xwasteTests/*, xwaste-watchUITests/*, xwaste/{ShoppingListView,HomeInventoryView,XWasteApp,PersistenceController,CategorySection}.swift, xwaste/xwaste-macOS.entitlements, README.md, CLAUDE.md | 16 unit tests + 9 watch UI tests green; 7.5-7.7 blocked (no Simulator GUI, screen control declined) | ~180k |
+| 00:14 | Session end: 57 writes across 20 files (XWasteWatchApp.swift, xwaste-watch.entitlements, project.pbxproj, CategorySection.swift, xwaste-macOS.entitlements) | 24 reads | ~36107 tok |
+
+## Session: 2026-07-31 13:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-03 19:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-05 11:57
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-05 12:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-05 12:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-05 12:08
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-05 12:08
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 12:13 | Created xwaste/LaunchSupport.swift | — | ~681 |
+| 12:13 | Created xwaste-watch/XWasteWatchApp.swift | — | ~96 |
+| 12:13 | Edited xwaste/XWasteApp.swift | inline fix | ~23 |
+| 12:14 | Created xwasteUITests/XWasteRegressionUITests.swift | — | ~1814 |
+| 12:15 | Edited xwaste.xcodeproj/xcshareddata/xcschemes/xwaste.xcscheme | expanded (+10 lines) | ~167 |
+| 12:15 | Edited openspec/changes/add-watchos-macos/tasks.md | inline fix | ~185 |
+| 12:15 | Edited openspec/changes/add-watchos-macos/design.md | inline fix | ~77 |
+| 12:15 | Edited openspec/changes/add-watchos-macos/design.md | inline fix | ~168 |
+| 12:26 | Edited CLAUDE.md | modified environment() | ~190 |
+| 12:26 | Added xwasteUITests target for 7.5 after simulator GUI proved unavailable; shared LaunchSupport seam | project.pbxproj, xwaste/LaunchSupport.swift, xwasteUITests/, xwaste-watch/*, xwaste.xcscheme, tasks.md 3.5, design.md | 7 iOS UI tests green; 10 watch + 16 unit still green; 7.6/7.7 blocked on declined screen access | ~60k |
+| 12:27 | Session end: 9 writes across 8 files (LaunchSupport.swift, XWasteWatchApp.swift, XWasteApp.swift, XWasteRegressionUITests.swift, xwaste.xcscheme) | 0 reads | ~3641 tok |
+| 12:35 | Session end: 9 writes across 8 files (LaunchSupport.swift, XWasteWatchApp.swift, XWasteApp.swift, XWasteRegressionUITests.swift, xwaste.xcscheme) | 0 reads | ~3641 tok |
+| 12:38 | Edited xwaste/ShoppingListView.swift | modified forgetSelection() | ~340 |
+| 12:38 | Edited xwaste/HomeInventoryView.swift | modified forgetSelection() | ~268 |
+| 13:05 | 7.6/7.7 driven Mac verification; found+fixed pre-existing macOS List render bug and min-window/toolbar overflow | xwaste/ShoppingListView.swift, xwaste/HomeInventoryView.swift, xwaste/XWasteApp.swift, .wolf/buglog.json, .wolf/cerebrum.md | all 33 tests green (16 unit + 7 iOS UI + 10 watch UI); groups 1-7,10 complete | ~90k |
+| 13:06 | Session end: 11 writes across 10 files (LaunchSupport.swift, XWasteWatchApp.swift, XWasteApp.swift, XWasteRegressionUITests.swift, xwaste.xcscheme) | 0 reads | ~4294 tok |
+
+## Session: 2026-08-06 21:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:17 | Group 8 skipped (no non-ADP Apple ID); simulator GUI made to work; toolchain restored | openspec/changes/add-watchos-macos/tasks.md, .wolf/cerebrum.md | watch suite 10/10 green after restore; 42/54 tasks, group 9 remains | ~45k |
+
+## Session: 2026-08-07 00:05
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-07 00:22
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-07 00:22
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-08 09:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-08 12:50
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-08 13:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-08 14:08
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-08 19:19
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-09 12:42
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-09 13:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-10 21:52
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-13 19:52
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-13 19:52
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-14 01:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-31 16:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-31 16:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 16:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 16:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 12:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 12:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 12:46 | TestFlight 1.0(2) uploaded; diagnosed dev-vs-production CloudKit env split explaining Mac/phone list mismatch | .wolf/cerebrum.md, project.pbxproj (build 2) | upload succeeded; group 9 needs phone in different envs for watch vs Mac tests | ~35k |
+| 13:08 | Found+fixed fresh-install activeHousehold bug (watch showed empty list); build 3 uploaded | xwaste/PersistenceController.swift, xwasteTests/GroceryStoreTests.swift, .wolf/* | 20 unit + 7 iOS UI + 10 watch UI green; TestFlight 1.0(3) processing | ~40k |
+| 22:01 | 9.5-9.7 verified: same-account Mac<->iPhone sync + offline merge; deferred 10.1 CLOSED | openspec/changes/archive/2026-07-28-add-grocery-inventory/tasks.md, add-watchos-macos/tasks.md, CLAUDE.md | 49/54; only skipped group 8 remains | ~25k |

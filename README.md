@@ -1,6 +1,6 @@
 # xwaste
 
-An iOS app with one purpose: **stop you from buying groceries you already have.**
+An app with one purpose: **stop you from buying groceries you already have.** Runs on iPhone and iPad, Apple Watch, and Mac.
 
 ## What
 
@@ -12,6 +12,10 @@ xwaste is a shopping list that doubles as a home inventory. Two tabs:
 The connective tissue is the warning: add something you already have at home and the app tells you — *"You already have 3 onions at home"* — while you type and again on save. It warns, never blocks; sometimes you really do need a fourth onion.
 
 Households share one list and one inventory: invite a partner or roommate via iCloud and everyone shops against the same kitchen. No accounts, no sign-up — your iCloud identity is the identity.
+
+**On the watch**, the same list is a remote for the shopping trip: two pages (list, then At Home), one tap on a row to check an item off, an undo screen right after, and a +/− screen for quantities. Adding, renaming, recategorizing, and sharing stay on the phone — so does the duplicate warning, since you cannot add from the wrist. The watch reads the household's live data over iCloud like any second device; without an iCloud account it says so rather than showing an empty list.
+
+**On the Mac**, everything reachable by touch is reachable by pointer and keyboard: context menus carry every action iOS puts behind a swipe, the delete key removes the selected row, and ⌘N opens the add sheet with the name field focused.
 
 ## Why
 
