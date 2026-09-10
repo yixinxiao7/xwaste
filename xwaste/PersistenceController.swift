@@ -12,6 +12,7 @@ final class PersistenceController: ObservableObject {
 
     static let cloudKitContainerIdentifier = "iCloud.com.yixinxiao.nomorewaste"
     private static let activeHouseholdIDKey = "activeHouseholdID"
+    private static let autoCreatedKey = "activeHouseholdWasAutoCreated"
 
     let container: NSPersistentCloudKitContainer
     private let inMemory: Bool
@@ -23,9 +24,24 @@ final class PersistenceController: ObservableObject {
     /// household only changes what `activeHousehold` points at, not any fetch.
     private(set) var sharedPersistentStore: NSPersistentStore?
 
+    /// Loaded exactly once and handed to every container. `init(name:)` would
+    /// load a *new* `NSManagedObjectModel` per instance, and two loaded models
+    /// declaring the same entities make Core Data unable to map an entity to
+    /// its managed-object subclass ("Failed to find a unique match…"), which
+    /// throws as soon as a second stack exists — previews plus the app, or one
+    /// per unit test.
+    private static let managedObjectModel: NSManagedObjectModel = {
+        guard let url = Bundle(for: GroceryItem.self).url(forResource: "XWaste", withExtension: "momd"),
+              let model = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Missing XWaste managed object model")
+        }
+        return model
+    }()
+
     init(inMemory: Bool = false) {
         self.inMemory = inMemory
-        container = NSPersistentCloudKitContainer(name: "XWaste")
+        container = NSPersistentCloudKitContainer(name: "XWaste",
+                                                  managedObjectModel: Self.managedObjectModel)
 
         guard let privateDescription = container.persistentStoreDescriptions.first else {
             fatalError("Missing persistent store description")
@@ -81,7 +97,14 @@ final class PersistenceController: ObservableObject {
         }
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.viewContext.automaticallyMergesChangesFromParent = true
+        if !inMemory, UserDefaults.standard.bool(forKey: Self.autoCreatedKey) {
+            activeHouseholdWasAutoCreated = true
+        }
         activeHousehold = resolveActiveHousehold()
+        // A previously-provisional choice may be resolvable already, or only
+        // once the next import lands.
+        adoptSyncedHouseholdIfPresent()
+        observeForAdoption()
     }
 
     /// In-memory variant for SwiftUI previews, seeded with a few items.
@@ -103,8 +126,20 @@ final class PersistenceController: ObservableObject {
     /// Set once in init, before anything can read it.
     @Published private(set) var activeHousehold: Household!
 
+    /// True when `activeHousehold` is one this install invented because the
+    /// local store was empty at launch — not one the user has ever used. A
+    /// fresh install on a second device always hits this: Core Data has
+    /// nothing yet, CloudKit has not imported yet, so a household gets created
+    /// that the real data will never belong to. Until an import proves
+    /// otherwise, that choice stays provisional.
+    private(set) var activeHouseholdWasAutoCreated = false
+
+    private var householdAdoptionObserver: (any NSObjectProtocol)?
+
     func activate(_ household: Household) {
         activeHousehold = household
+        activeHouseholdWasAutoCreated = false
+        persistAutoCreatedFlag()
         persistActiveHouseholdID(household)
     }
 
@@ -167,6 +202,53 @@ final class PersistenceController: ObservableObject {
         return true
     }
 
+    /// Swaps a provisionally-created household for the real one as soon as
+    /// CloudKit delivers it. Without this a second device shows an empty list
+    /// forever: its own empty household stays active while the household that
+    /// actually owns the items sits unreferenced in the same store.
+    @discardableResult
+    func adoptSyncedHouseholdIfPresent() -> Bool {
+        guard activeHouseholdWasAutoCreated, let current = activeHousehold else { return false }
+        let context = container.viewContext
+        let request = Household.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+        let households = (try? context.fetch(request)) ?? []
+        guard let adopted = households.first(where: { $0 != current }) else { return false }
+
+        // Only abandon our own household if nothing was added to it in the
+        // meantime; a user who added items before the first import finished
+        // keeps them rather than having them stranded.
+        guard itemCount(for: current, in: context) == 0 else { return false }
+
+        activate(adopted)
+        context.delete(current)
+        try? context.save()
+        stopObservingForAdoption()
+        return true
+    }
+
+    private func itemCount(for household: Household, in context: NSManagedObjectContext) -> Int {
+        let request = GroceryItem.fetchRequest()
+        request.predicate = NSPredicate(format: "household == %@", household)
+        return (try? context.count(for: request)) ?? 0
+    }
+
+    private func observeForAdoption() {
+        guard !inMemory, activeHouseholdWasAutoCreated, householdAdoptionObserver == nil else { return }
+        householdAdoptionObserver = NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange, object: nil, queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in self?.adoptSyncedHouseholdIfPresent() }
+        }
+    }
+
+    private func stopObservingForAdoption() {
+        if let householdAdoptionObserver {
+            NotificationCenter.default.removeObserver(householdAdoptionObserver)
+            self.householdAdoptionObserver = nil
+        }
+    }
+
     /// Launch resolution: the persisted choice wins (so the active household
     /// never flips when a sync arrives mid-session), then a household living in
     /// the shared store (an accepted invitation), then the personal one —
@@ -195,6 +277,8 @@ final class PersistenceController: ObservableObject {
         household.id = UUID()
         household.createdAt = Date()
         try? context.save()
+        activeHouseholdWasAutoCreated = true
+        persistAutoCreatedFlag()
         persistActiveHouseholdID(household)
         return household
     }
@@ -202,6 +286,13 @@ final class PersistenceController: ObservableObject {
     private func persistActiveHouseholdID(_ household: Household) {
         guard !inMemory else { return }
         UserDefaults.standard.set(household.id?.uuidString, forKey: Self.activeHouseholdIDKey)
+    }
+
+    /// The provisional flag has to survive relaunches: the first import can
+    /// easily land after the app has been quit and reopened.
+    private func persistAutoCreatedFlag() {
+        guard !inMemory else { return }
+        UserDefaults.standard.set(activeHouseholdWasAutoCreated, forKey: Self.autoCreatedKey)
     }
 
     // MARK: - CloudKit schema

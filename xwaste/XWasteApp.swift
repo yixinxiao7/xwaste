@@ -11,7 +11,7 @@ struct XWasteApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     #endif
 
-    @StateObject private var persistence = PersistenceController.shared
+    @StateObject private var persistence = LaunchSupport.makePersistenceController()
 
     init() {
         #if DEBUG
@@ -28,6 +28,11 @@ struct XWasteApp: App {
             RootTabView(persistence: persistence)
                 .environment(\.managedObjectContext, persistence.container.viewContext)
         }
+        #if os(macOS)
+        // Tall and narrow, like the two-tab layout it holds. No scene
+        // re-architecture beyond this.
+        .defaultSize(width: 480, height: 720)
+        #endif
     }
 }
 
@@ -44,6 +49,11 @@ struct RootTabView: View {
         }
         // Joining or leaving a household swaps every fetch to the new scope.
         .id(household.objectID)
+        #if os(macOS)
+        // The floor at which the tab bar, toolbar buttons, rows, and steppers
+        // all stay visible and operable.
+        .frame(minWidth: 480, idealWidth: 480, minHeight: 520, idealHeight: 720)
+        #endif
     }
 }
 

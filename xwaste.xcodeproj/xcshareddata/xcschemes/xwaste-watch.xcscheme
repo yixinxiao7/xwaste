@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "000000000000000100000000"
-               BuildableName = "xwaste.app"
-               BlueprintName = "xwaste"
+               BlueprintIdentifier = "000000000000000200000000"
+               BuildableName = "xwaste-watch.app"
+               BlueprintName = "xwaste-watch"
                ReferencedContainer = "container:xwaste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,19 +34,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "000000000000000300000000"
-               BuildableName = "xwasteTests.xctest"
-               BlueprintName = "xwasteTests"
-               ReferencedContainer = "container:xwaste.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "000000000000000500000000"
-               BuildableName = "xwasteUITests.xctest"
-               BlueprintName = "xwasteUITests"
+               BlueprintIdentifier = "000000000000000400000000"
+               BuildableName = "xwaste-watchUITests.xctest"
+               BlueprintName = "xwaste-watchUITests"
                ReferencedContainer = "container:xwaste.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -61,24 +51,17 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      queueDebuggingEnabled = "No">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "xwaste.app"
-            BlueprintName = "xwaste"
+            BlueprintIdentifier = "000000000000000200000000"
+            BuildableName = "xwaste-watch.app"
+            BlueprintName = "xwaste-watch"
             ReferencedContainer = "container:xwaste.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = ""
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -90,9 +73,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "xwaste.app"
-            BlueprintName = "xwaste"
+            BlueprintIdentifier = "000000000000000200000000"
+            BuildableName = "xwaste-watch.app"
+            BlueprintName = "xwaste-watch"
             ReferencedContainer = "container:xwaste.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
