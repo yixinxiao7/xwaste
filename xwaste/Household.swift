@@ -8,6 +8,7 @@ nonisolated final class Household: NSManagedObject {
     @NSManaged var id: UUID?
     @NSManaged var createdAt: Date?
     @NSManaged var items: NSSet?
+    @NSManaged var recipes: NSSet?
 }
 
 extension Household {
@@ -17,5 +18,9 @@ extension Household {
 
     var itemsArray: [GroceryItem] {
         (items as? Set<GroceryItem>).map(Array.init) ?? []
+    }
+
+    var recipesArray: [Recipe] {
+        (recipes as? Set<Recipe>).map(Array.init) ?? []
     }
 }

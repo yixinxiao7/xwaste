@@ -10,6 +10,8 @@ v1 is implemented, verified, and on TestFlight. The `add-grocery-inventory` chan
 
 `add-watchos-macos` is **archived** at `openspec/changes/archive/2026-09-09-add-watchos-macos/` (49/54 tasks; group 8, the simulator CloudKit probe, was **skipped by user decision** for want of a non-ADP Apple ID). Its two new capabilities are now in the living contract, which covers **eight**: the original six plus `watch-app` and `mac-experience`.
 
+`add-recipes` (`openspec/changes/add-recipes/`) is **implemented, not yet archived** — groups 1–6 and 8 done (model version 2, `RecipeStore`/`RecipeAvailability`/`RecipeImage`, the Recipes tab and cooking session UI, unit and iOS UI tests, Mac verification). Two new capabilities (`recipes`, `cooking-session`) bring the contract to **ten** once synced. Group 7 (CloudKit production schema deploy, TestFlight upload, hardware sync/sharing checks) is **blocked on the user's physical iPhone** — task 1.6's development-schema push needs it too. Until 7.1–7.2 land, recipes work locally and sync in the CloudKit *development* environment only.
+
 **Hardware-only defects this change surfaced** — none reproducible on a simulator:
 - `bug-049` — a fresh install on a *second* device invented its own empty household and never adopted the synced one, so it showed an empty list forever. Latent since v1.
 - `bug-046/047` — macOS `List` mis-diffs row removal in a multi-section list; `.frame(minWidth:)` silently overrode `.defaultSize`. Both pre-existing since v1, invisible until the Mac build was actually run.

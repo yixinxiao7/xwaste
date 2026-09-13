@@ -75,10 +75,15 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				CookingSessionView.swift,
 				HomeInventoryView.swift,
 				HouseholdView.swift,
 				Info.plist,
 				ItemEditorView.swift,
+				RecipeDetailView.swift,
+				RecipeEditorView.swift,
+				RecipeTileView.swift,
+				RecipesView.swift,
 				SharingController.swift,
 				ShoppingListView.swift,
 				XWasteApp.swift,

@@ -4,10 +4,11 @@ An app with one purpose: **stop you from buying groceries you already have.** Ru
 
 ## What
 
-xwaste is a shopping list that doubles as a home inventory. Two tabs:
+xwaste is a shopping list that doubles as a home inventory. Three tabs:
 
 - **Shopping List** — add items, grouped automatically into store categories (Produce, Dairy & Eggs, …). Checking an item off doesn't delete it — it moves into your inventory.
 - **At Home** — everything you own, in the same categories, with one-tap quantity steppers. Using the last onion removes the row.
+- **Recipes** — a grid of your recipes, each marked with a check or an x for whether At Home covers every ingredient right now. Filter to what you can make or what's missing, tap a recipe to see which ingredient falls short, and add exactly the shortfall to the shopping list in one tap. **Start Cooking** opens an ingredient and step checklist; **Finish Cooking** subtracts what you used from At Home, with an undo that verifies nothing changed underneath it first.
 
 The connective tissue is the warning: add something you already have at home and the app tells you — *"You already have 3 onions at home"* — while you type and again on save. It warns, never blocks; sometimes you really do need a fourth onion.
 

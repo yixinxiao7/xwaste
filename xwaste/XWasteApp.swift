@@ -46,6 +46,8 @@ struct RootTabView: View {
                 .tabItem { Label("Shopping List", systemImage: "cart") }
             NavigationStack { HomeInventoryView(household: household) }
                 .tabItem { Label("At Home", systemImage: "house") }
+            NavigationStack { RecipesView(household: household) }
+                .tabItem { Label("Recipes", systemImage: "book") }
         }
         // Joining or leaving a household swaps every fetch to the new scope.
         .id(household.objectID)

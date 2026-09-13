@@ -46,6 +46,20 @@ enum LaunchSupport {
         GroceryItem.create(name: "Onion", quantity: 2, location: .shoppingList, household: household, in: context)
         GroceryItem.create(name: "Milk", quantity: 1, location: .shoppingList, household: household, in: context)
         GroceryItem.create(name: "Butter", quantity: 1, location: .atHome, household: household, in: context)
+        // Recipes: one cookable with the seeded Butter, one short on the
+        // seeded Onion (which is on the list, not at home) — no new items.
+        RecipeStore.create(name: "Buttered Toast", summary: "A quick, warm snack.", imageData: nil,
+                           ingredients: [RecipeIngredientDraft(name: "Butter", quantity: 1)],
+                           steps: [RecipeStepDraft(text: "Toast the bread."),
+                                   RecipeStepDraft(text: "Spread the butter.")],
+                           household: household, context: context)
+        RecipeStore.create(name: "Onion Soup", summary: "Simple and savory.", imageData: nil,
+                           ingredients: [RecipeIngredientDraft(name: "Onion", quantity: 3),
+                                        RecipeIngredientDraft(name: "Butter", quantity: 1)],
+                           steps: [RecipeStepDraft(text: "Slice the onions."),
+                                   RecipeStepDraft(text: "Cook in butter until soft."),
+                                   RecipeStepDraft(text: "Simmer and serve.")],
+                           household: household, context: context)
         try? context.save()
         return controller
     }
