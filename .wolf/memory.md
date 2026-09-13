@@ -532,3 +532,101 @@
 | 13:08 | Found+fixed fresh-install activeHousehold bug (watch showed empty list); build 3 uploaded | xwaste/PersistenceController.swift, xwasteTests/GroceryStoreTests.swift, .wolf/* | 20 unit + 7 iOS UI + 10 watch UI green; TestFlight 1.0(3) processing | ~40k |
 | 22:01 | 9.5-9.7 verified: same-account Mac<->iPhone sync + offline merge; deferred 10.1 CLOSED | openspec/changes/archive/2026-07-28-add-grocery-inventory/tasks.md, add-watchos-macos/tasks.md, CLAUDE.md | 49/54; only skipped group 8 remains | ~25k |
 | 22:19 | Archived add-watchos-macos; synced watch-app + mac-experience into living specs | openspec/specs/{watch-app,mac-experience}/spec.md, openspec/changes/archive/2026-09-09-add-watchos-macos/, CLAUDE.md | contract now 8 capabilities; no active changes | ~15k |
+
+## Session: 2026-09-13 13:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 13:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 13:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 13:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:03 | Created openspec/changes/add-recipes/proposal.md | — | ~1558 |
+| 14:04 | Created openspec/changes/add-recipes/specs/recipes/spec.md | — | ~3544 |
+| 14:04 | Created openspec/changes/add-recipes/specs/cooking-session/spec.md | — | ~1722 |
+| 14:04 | Created openspec/changes/add-recipes/specs/mac-experience/spec.md | — | ~433 |
+| 14:05 | Created openspec/changes/add-recipes/specs/watch-app/spec.md | — | ~334 |
+| 14:06 | Created openspec/changes/add-recipes/design.md | — | ~4415 |
+| 14:07 | Created openspec/changes/add-recipes/tasks.md | — | ~3547 |
+| 13:50 | Read anatomy, cerebrum, model, GroceryItem/Store, views, specs, archived add-watchos-macos artifacts for conventions | .wolf/*, xwaste/*.swift, openspec/specs/* | context gathered for /opsx:propose recipes | ~45k |
+| 13:53 | Asked 7 design questions (consume-on-finish, ownership, edit/delete, ingredient model, image source, add-missing, start rule) via AskUserQuestion | — | all answered; 6 recommended picks + Start Cooking disabled | ~2k |
+| 13:55 | `openspec new change add-recipes`; wrote proposal, specs (recipes, cooking-session new; mac-experience, watch-app MODIFIED), design, tasks | openspec/changes/add-recipes/** | `openspec validate add-recipes --strict` valid; 4/4 artifacts | ~14k |
+| 14:05 | Logged user decisions + model-versioning/top-up/availability learnings to cerebrum; session entries to memory | .wolf/cerebrum.md, .wolf/memory.md | done | ~2k |
+| 14:08 | Session end: 7 writes across 4 files (proposal.md, spec.md, design.md, tasks.md) | 1 reads | ~16662 tok |
+
+## Session: 2026-09-13 14:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 14:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 14:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:18 | Created xwaste/XWaste.xcdatamodeld/XWaste 2.xcdatamodel/contents | — | ~1060 |
+| 14:18 | Created xwaste/XWaste.xcdatamodeld/.xccurrentversion | — | ~70 |
+| 14:18 | Created xwaste/Recipe.swift | — | ~239 |
+| 14:18 | Created xwaste/RecipeIngredient.swift | — | ~139 |
+| 14:18 | Created xwaste/RecipeStep.swift | — | ~108 |
+| 14:18 | Edited xwaste/Household.swift | modified fetchRequest() | ~132 |
+| 14:24 | Created xwaste/RecipeAvailability.swift | — | ~508 |
+| 14:24 | Created xwaste/RecipeImage.swift | — | ~673 |
+| 14:26 | Created xwaste/RecipeStore.swift | — | ~3913 |
+| 14:26 | Created xwasteTests/RecipeAvailabilityTests.swift | — | ~1066 |
+| 14:27 | Edited xwasteTests/RecipeAvailabilityTests.swift | 2→1 lines | ~35 |
+| 14:27 | Created xwasteTests/RecipeStoreTests.swift | — | ~3877 |
+| 14:28 | Created xwasteTests/RecipeImageTests.swift | — | ~872 |
+| 14:29 | Created xwaste/RecipeTileView.swift | — | ~546 |
+| 14:30 | Created xwaste/RecipesView.swift | — | ~1624 |
+| 14:31 | Created xwaste/RecipeEditorView.swift | — | ~2183 |
+| 14:32 | Created xwaste/RecipeDetailView.swift | — | ~2176 |
+| 14:32 | Created xwaste/CookingSessionView.swift | — | ~955 |
+| 14:32 | Edited xwaste/RecipesView.swift | modified navigationDestination() | ~99 |
+| 14:32 | Edited xwaste/XWasteApp.swift | 4→6 lines | ~111 |
+| 14:32 | Edited xwaste/RecipeTileView.swift | added 1 import(s) | ~12 |
+| 14:33 | Edited xwaste.xcodeproj/project.pbxproj | 12→17 lines | ~113 |
+| 14:35 | Edited xwaste/LaunchSupport.swift | expanded (+14 lines) | ~359 |
+| 14:35 | Edited xwaste/PersistenceController.swift | 4→9 lines | ~156 |
+| 14:38 | Edited xwaste/CookingSessionView.swift | 4→5 lines | ~40 |
+| 14:39 | Created xwasteUITests/RecipesUITests.swift | — | ~2722 |
+| 14:39 | Edited xwasteUITests/RecipesUITests.swift | 2→2 lines | ~56 |
+
+## Session: 2026-09-13 15:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:14 | Edited xwaste/RecipesView.swift | 2→6 lines | ~35 |
+| 15:15 | Edited xwaste/RecipesView.swift | 4→3 lines | ~30 |
+| 15:19 | Edited xwaste/RecipesView.swift | 11→16 lines | ~246 |
+| 15:19 | Edited xwaste/RecipeDetailView.swift | 5→8 lines | ~118 |
+| 15:28 | Edited xwasteUITests/RecipesUITests.swift | 4→5 lines | ~91 |
+| 15:28 | Edited xwasteUITests/RecipesUITests.swift | 10→9 lines | ~146 |
+| 15:28 | Edited xwasteUITests/RecipesUITests.swift | expanded (+6 lines) | ~127 |
+| 15:30 | Edited README.md | 4→5 lines | ~226 |
+| 15:30 | Edited CLAUDE.md | 1→3 lines | ~265 |
+
+## Session summary — 2026-09-13 (add-recipes apply)
+
+Implemented groups 1–6 and 8 of `add-recipes` (51-task change): model version 2 (`Recipe`/`RecipeIngredient`/`RecipeStep` + `Household.recipes`), `RecipeAvailability`/`RecipeImage`/`RecipeStore` pure logic and store, the Recipes tab UI (`RecipesView`, `RecipeTileView`, `RecipeDetailView`, `RecipeEditorView`, `CookingSessionView`), 24 new unit tests (all passing) and 9 new iOS UI tests, and Mac verification via `open --env` + computer-use. Found and fixed a real crash (bug-052: missing `sortDescriptors` on two `@FetchRequest`s) that affected both iOS and macOS. Group 7 (CloudKit production deploy, TestFlight, hardware sync/sharing) is blocked on the user's physical iPhone and left unstarted — flagged in CLAUDE.md and tasks.md.
+| 15:34 | Edited xwasteUITests/RecipesUITests.swift | 2→7 lines | ~94 |
+| 15:38 | Session end: 10 writes across 5 files (RecipesView.swift, RecipeDetailView.swift, RecipesUITests.swift, README.md, CLAUDE.md) | 5 reads | ~10046 tok |
+| 15:40 | Session end: 10 writes across 5 files (RecipesView.swift, RecipeDetailView.swift, RecipesUITests.swift, README.md, CLAUDE.md) | 5 reads | ~10046 tok |
+| 16:30 | Session end: 10 writes across 5 files (RecipesView.swift, RecipeDetailView.swift, RecipesUITests.swift, README.md, CLAUDE.md) | 5 reads | ~10046 tok |
+| 16:47 | Session end: 10 writes across 5 files (RecipesView.swift, RecipeDetailView.swift, RecipesUITests.swift, README.md, CLAUDE.md) | 5 reads | ~10046 tok |
+| 16:48 | Session end: 10 writes across 5 files (RecipesView.swift, RecipeDetailView.swift, RecipesUITests.swift, README.md, CLAUDE.md) | 5 reads | ~10046 tok |

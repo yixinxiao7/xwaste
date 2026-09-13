@@ -845,6 +845,58 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-09T17:08:33.890894Z"
+    },
+    {
+      "id": "bug-050",
+      "timestamp": "2026-09-13T19:15:48.472Z",
+      "error_message": "Significant refactor of ",
+      "file": "xwaste/RecipesView.swift",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 4\u21923 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-13T19:15:48.472Z"
+    },
+    {
+      "id": "bug-051",
+      "timestamp": "2026-09-13T19:28:36.267Z",
+      "error_message": "Significant refactor of ",
+      "file": "xwasteUITests/RecipesUITests.swift",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 4\u21925 lines (2 removed) | Also: app.textFields[\"Ingredient\"].typeText(\"Apple\"); app.textFields[\"Step\"].typeText(\"Bake it\")",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-13T19:28:58.054Z"
+    },
+    {
+      "id": "bug-052",
+      "timestamp": "2026-09-13T19:20:00.000Z",
+      "error_message": "xwaste crashed with SIGTRAP/EXC_BREAKPOINT immediately on opening the Recipes tab (macOS) or hung then crashed waiting for tile text (iOS XCUITest)",
+      "file": "xwaste/RecipesView.swift, xwaste/RecipeDetailView.swift",
+      "root_cause": "The @FetchRequest for At Home GroceryItem rows (homeItems) had a predicate but no sortDescriptors. NSFetchedResultsController, which @FetchRequest wraps, throws NSInvalidArgumentException at init if the fetch request has zero sort descriptors \u2014 the exception surfaces deep inside AppKit/UIKit layout machinery with no Swift frames in the crash trace, making it look unrelated to Core Data. Confirmed by bisecting: a RecipesView stubbed down to just the two @FetchRequest properties and a plain Text still crashed; removing the homeItems FetchRequest entirely made it stop.",
+      "fix": "Added request.sortDescriptors = [NSSortDescriptor(key: \"createdAt\", ascending: true)] to both the RecipesView and RecipeDetailView homeItems fetch requests (the order is never displayed, only the requirement matters).",
+      "tags": [
+        "coredata",
+        "fetchrequest",
+        "nsfetchedresultscontroller",
+        "crash",
+        "macos",
+        "ios",
+        "recipes"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-13T19:20:00.000Z"
     }
   ]
 }
