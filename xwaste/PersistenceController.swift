@@ -115,6 +115,11 @@ final class PersistenceController: ObservableObject {
         GroceryItem.create(name: "Broccoli", quantity: 1, location: .shoppingList, household: household, in: context)
         GroceryItem.create(name: "Milk", quantity: 2, location: .shoppingList, household: household, in: context)
         GroceryItem.create(name: "Onion", quantity: 3, location: .atHome, household: household, in: context)
+        RecipeStore.create(name: "Onion Soup", summary: "Simple and savory.", imageData: nil,
+                           ingredients: [RecipeIngredientDraft(name: "Onion", quantity: 2)],
+                           steps: [RecipeStepDraft(text: "Slice the onions."),
+                                   RecipeStepDraft(text: "Simmer and serve.")],
+                           household: household, context: context)
         try? context.save()
         return controller
     }()

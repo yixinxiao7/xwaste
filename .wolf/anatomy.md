@@ -1,13 +1,13 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-05T16:38:41.954Z
-> Files: 539 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-13T19:34:56.315Z
+> Files: 563 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.gitignore` — Git ignore rules (~103 tok)
-- `CLAUDE.md` — xwaste (~948 tok)
-- `README.md` — Project documentation (~966 tok)
+- `CLAUDE.md` — xwaste (~1374 tok)
+- `README.md` — Project documentation (~1083 tok)
 
 ## .claude/
 
@@ -626,6 +626,28 @@
 - `ShoppingListView.stringsdata` (~297 tok)
 - `supplementaryOutputs-1` (~455 tok)
 
+## openspec/changes/add-recipes/
+
+- `design.md` — add-recipes design: 3 entities + orderIndex in model v2, pure RecipeAvailability, ImageIO ≤1024px images, view-state session as .sheet, consume/undo mirroring CheckOffUndo, top-up add-missing, target membership, risks, CloudKit migration plan (~4139 tok)
+- `proposal.md` — add-recipes: why (cook from what you have), what changes (Recipes tab, editor, status, filter, add-missing, cooking session, model v2), capabilities, impact (~1460 tok)
+- `tasks.md` — add-recipes tasks: 8 groups — model v2 + dev schema, store/logic, unit tests, UI, seeded iOS UI tests, Mac driven pass, CloudKit prod deploy + TestFlight hardware, docs/OpenWolf (~3325 tok)
+
+## openspec/changes/add-recipes/specs/cooking-session/
+
+- `spec.md` — NEW capability cooking-session: Start Cooking disabled when short, two checklists, clean slate, cancel, Finish consumes At Home, verifying undo (~1614 tok)
+
+## openspec/changes/add-recipes/specs/mac-experience/
+
+- `spec.md` — MODIFIED parity requirement: adds recipes + cooking sessions, Mac tile context menu and ⌘N scenarios (~406 tok)
+
+## openspec/changes/add-recipes/specs/recipes/
+
+- `spec.md` — NEW capability recipes: record, tab, tiles grid, availability status, filter, recipe page, edit/delete+undo, ingredient at-home hint, add-missing top-up, images, household scope (~3322 tok)
+
+## openspec/changes/add-recipes/specs/watch-app/
+
+- `spec.md` — MODIFIED scope requirement: watch explicitly excludes recipes and cooking sessions (~313 tok)
+
 ## openspec/changes/add-watchos-macos/
 
 - `design.md` — Context (~2890 tok)
@@ -660,8 +682,6 @@
 - `WatchListView.swift` — / One page of the watch app. Both pages share this body: the same (~2101 tok)
 - `WatchQuantityView.swift` — / watchOS has no `Stepper`, and cramming tap targets into rows invites (~629 tok)
 - `WatchRootView.swift` — / Two vertical pages, list first — the phone's two destinations without any (~612 tok)
-- `Assets.xcassets/AppIcon.appiconset` — watchOS app icon (single 1024x1024, platform 'watchos'). REQUIRED: without it watchOS refuses to install on a physical watch ("This app could not be installed at this time"), though simulators build and run fine.
-- `xwaste-watch.entitlements` — iCloud container + CloudKit + aps-environment for the watch target.
 - `XWasteWatchApp.swift` — Struct: XWasteWatchApp (~96 tok)
 
 ## xwaste-watchUITests/
@@ -670,7 +690,7 @@
 
 ## xwaste.xcodeproj/
 
-- `project.pbxproj` — !$*UTF8*$! (~5596 tok)
+- `project.pbxproj` — !$*UTF8*$! (~9166 tok)
 
 ## xwaste.xcodeproj/xcshareddata/xcschemes/
 
@@ -680,15 +700,39 @@
 ## xwaste/
 
 - `CategorySection.swift` — / One category's slice of a fetch. Both screens build their sections through (~802 tok)
+- `CookingSessionView.swift` — / Session state is view-local `@State`, presented as a `.sheet` on every (~973 tok)
 - `HomeInventoryView.swift` — SwiftUI view: HomeInventoryView (~1360 tok)
-- `LaunchSupport.swift` — / Launch-time seams the UI-test suites drive, shared by the iOS and watch (~681 tok)
-- `PersistenceController.swift` — / Wraps `NSPersistentCloudKitContainer` — the CloudKit-capable container type — (~3026 tok)
+- `Household.swift` — / The sharing root: one record owning every `GroceryItem`, so a `CKShare` of it (~217 tok)
+- `LaunchSupport.swift` — / Launch-time seams the UI-test suites drive, shared by the iOS and watch (~991 tok)
+- `PersistenceController.swift` — / Wraps `NSPersistentCloudKitContainer` — the CloudKit-capable container type — (~4102 tok)
+- `Recipe.swift` — Class: Recipe (~239 tok)
+- `RecipeAvailability.swift` — / Per-ingredient status for one recipe: how many the household has on hand (~508 tok)
+- `RecipeDetailView.swift` — / Own At Home fetch so status stays live while this screen is open — the (~2236 tok)
+- `RecipeEditorView.swift` — / One sheet for both add and edit, mirroring `ItemEditorView`'s shape. (~2183 tok)
+- `RecipeImage.swift` — / Pure ImageIO wrapper — no UIKit or AppKit, so it compiles and runs on (~673 tok)
+- `RecipeIngredient.swift` — Class: RecipeIngredient (~139 tok)
+- `RecipeStep.swift` — Class: RecipeStep (~108 tok)
+- `RecipeStore.swift` — / One ingredient row as the editor collects it, before merging and ordering. (~3913 tok)
+- `RecipesView.swift` — SwiftUI view: RecipesView (~1744 tok)
+- `RecipeTileView.swift` — / One tile in the Recipes grid: photo or placeholder, name, and a status (~550 tok)
 - `ShoppingListView.swift` — SwiftUI view: ShoppingListView (~1974 tok)
-- `XWasteApp.swift` — if os(iOS) (~895 tok)
+- `XWasteApp.swift` — if os(iOS) (~940 tok)
+
+## xwaste/XWaste.xcdatamodeld/
+
+- `.xccurrentversion` (~70 tok)
+
+## xwaste/XWaste.xcdatamodeld/XWaste 2.xcdatamodel/
+
+- `contents` (~1060 tok)
 
 ## xwasteTests/
 
+- `RecipeAvailabilityTests.swift` — Struct: RecipeAvailabilityTests (~1052 tok)
+- `RecipeImageTests.swift` — Struct: RecipeImageTests (~872 tok)
+- `RecipeStoreTests.swift` — Struct: RecipeStoreTests (~3877 tok)
 
 ## xwasteUITests/
 
+- `RecipesUITests.swift` — / Drives the Recipes tab against the extended seed (task 4.8): "Buttered (~2907 tok)
 - `XWasteRegressionUITests.swift` — / The iOS half of task 7.5: a one-time regression check that group 6's (~1814 tok)

@@ -8,7 +8,9 @@ An iOS SwiftUI app whose single purpose is **reducing food waste**: the shopping
 
 v1 is implemented, verified, and on TestFlight. The `add-grocery-inventory` change is archived at `openspec/changes/archive/2026-07-28-add-grocery-inventory/` (proposal, design, 97-task log). Its one deferred check — same-account two-device sync (task 10.1) — was **closed 2026-09-09** by `add-watchos-macos` 9.5–9.6.
 
-`add-watchos-macos` is **49/54 complete**: watchOS app, first-class macOS support, three test targets, and the full hardware pass are done. The only outstanding items are group 8 (simulator CloudKit probe), **skipped by user decision** for want of a non-ADP Apple ID.
+`add-watchos-macos` is **archived** at `openspec/changes/archive/2026-09-09-add-watchos-macos/` (49/54 tasks; group 8, the simulator CloudKit probe, was **skipped by user decision** for want of a non-ADP Apple ID). Its two new capabilities are now in the living contract, which covers **eight**: the original six plus `watch-app` and `mac-experience`.
+
+`add-recipes` (`openspec/changes/add-recipes/`) is **implemented, not yet archived** — groups 1–6 and 8 done (model version 2, `RecipeStore`/`RecipeAvailability`/`RecipeImage`, the Recipes tab and cooking session UI, unit and iOS UI tests, Mac verification). Two new capabilities (`recipes`, `cooking-session`) bring the contract to **ten** once synced. Group 7 (CloudKit production schema deploy, TestFlight upload, hardware sync/sharing checks) is **blocked on the user's physical iPhone** — task 1.6's development-schema push needs it too. Until 7.1–7.2 land, recipes work locally and sync in the CloudKit *development* environment only.
 
 **Hardware-only defects this change surfaced** — none reproducible on a simulator:
 - `bug-049` — a fresh install on a *second* device invented its own empty household and never adopted the synced one, so it showed an empty list forever. Latent since v1.
@@ -35,7 +37,7 @@ Do **not** pass `CODE_SIGNING_ALLOWED=NO` to `xcodebuild test` — it strips the
 
 ## Specs are the contract
 
-The living requirements are in `openspec/specs/` — six capabilities: `grocery-items`, `item-categorization`, `shopping-list`, `home-inventory`, `duplicate-warning`, `household-sharing`. Read the relevant spec before changing behavior; propose changes with `/opsx:propose`. Validate with `openspec validate <change> --strict` (the change name is **positional** — there is no `--change` flag on `validate`).
+The living requirements are in `openspec/specs/` — eight capabilities: `grocery-items`, `item-categorization`, `shopping-list`, `home-inventory`, `duplicate-warning`, `household-sharing`, `watch-app`, `mac-experience`. Read the relevant spec before changing behavior; propose changes with `/opsx:propose`. Validate with `openspec validate <change> --strict` (the change name is **positional** — there is no `--change` flag on `validate`).
 
 ## Non-negotiables
 
